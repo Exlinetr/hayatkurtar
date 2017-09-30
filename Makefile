@@ -3,7 +3,6 @@ initialize:
 	sudo make install-docker
 	sudo make install-docker-compose
 	sudo make install-nginx
-	#sudo make pull-image
 	sudo make up
 
 create-files:
@@ -21,10 +20,6 @@ install-docker:
 
 install-docker-compose:
 	./scripts/docker-compose-install.sh
-
-#pull-image:
-#	docker pull furkaandogan/hayatkurtar.web.api:0.1
-#	docker pull furkaandogan/mongodb:0.2
 
 up:
 	docker-compose up -d

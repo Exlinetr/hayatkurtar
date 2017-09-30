@@ -16,23 +16,17 @@ services:
 #      - hayatkurtar.notification.api
 
 
-  #hayatkurtar.notification.api:
-  #  image: furkaandogan/pushnotification:0.1
-  #  ports:
-  #    - 8081:80
+#  hayatkurtar.notification.api:
+#    image: furkaandogan/pushnotification:0.1
+#    ports:
+#      - 8081:80
     
 
   hayatkurtar.db:
-    env_file: 
-      - hayatkurtar.env
     container_name: hayatkurtar.mongodb.container
-    image: furkaandogan/mongodb:0.2
-#    build:
-#      context: ./hayatKurtar.db
-#      dockerfile: Dockerfile
+    image: mongo:3.4
 #   ports:
 #     - 27017:27017
     volumes:
-      - ./apps/hayatkurtar/data/mongodb/:/data/mongodb-data-files
-      - ./apps/hayatkurtar/logs/mongodb/:/data/mongodb-log-files
+      - /apps/hayatkurtar/data/mongodb/:/data/db
     
